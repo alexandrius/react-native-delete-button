@@ -45,9 +45,10 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       flexWrap: "wrap",
    },
-   label: {
+   letter: {
       color: "white",
       fontWeight: "bold",
+      marginRight: Platform.select({ ios: 0, android: 1 }),
    },
    top: {
       alignItems: "center",
@@ -288,7 +289,7 @@ export default function DeleteButton() {
                      <Animated.Text
                         key={i.toString()}
                         style={{
-                           ...styles.label,
+                           ...styles.letter,
                            opacity,
                            transform: getLetterTransforms(i),
                         }}
