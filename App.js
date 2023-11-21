@@ -4,27 +4,27 @@ import * as Font from "expo-font";
 import Button from "./button";
 
 export default function App() {
-   const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-   const loadFonts = async () => {
-      await Font.loadAsync({
-         icon: require("./assets/icomoon.ttf"),
-      });
-      setFontsLoaded(true);
-   };
+  const loadFonts = async () => {
+    await Font.loadAsync({
+      icon: require("./assets/icomoon.ttf"),
+    });
+    setFontsLoaded(true);
+  };
 
-   useEffect(() => {
-      loadFonts();
-   }, []);
+  useEffect(() => {
+    loadFonts();
+  }, []);
 
-   return <View style={styles.container}>{fontsLoaded && <Button />}</View>;
+  return <View style={styles.container}>{fontsLoaded && <Button />}</View>;
 }
 
 const styles = StyleSheet.create({
-   container: {
-      flex: 1,
-      backgroundColor: "white",
-      alignItems: "center",
-      justifyContent: "center",
-   },
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
